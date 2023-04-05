@@ -109,8 +109,8 @@ const getauthorblogs = async (req, res) => {
     }
 }
 const deleteblog = async (req, res) => {
+    let delblog = await blogmodel.findOneAndDelete({ _id: req.params.id })
     try {
-        let deltask = await taskmodel.findOneAndDelete({ _id: req.params.id })
         res.json({
             success: true,
             message: "deleted succesfully"
@@ -123,6 +123,22 @@ const deleteblog = async (req, res) => {
         })
     }
 }
+const editBlog = async (req, res) => {
+    let newblog = await blogmodel.findOneAndUpdate({ _id: req.params.id }, req.body)
+    try {
+        res.json({
+            success: true,
+            message: "edited succesfully"
+        })
+    }
+    catch (error) {
+        res.json({
+            success: false,
+            message: "unsuccesfull"
+        })
+    }
+
+}
 
 
-module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog }
+module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog }

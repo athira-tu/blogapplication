@@ -14,16 +14,21 @@ function Card({ blogmap }) {
     //     window.location.replace("http://localhost:5173/viewblog")
     // }
     return (
-        <div className='box'>
-            <h2>{blogmap.title}</h2>
-            <h3>{blogmap.description}</h3>
-            <h6>{blogmap.authorname}</h6>
+
+        <>
+            <div className='allcard'>
+                <div className='cardhead'>
+                    <h2 className='auth'>{blogmap.title}</h2>
+                </div>
+                <h3>{blogmap.description}</h3>
+                <h6>{blogmap.authorname}</h6>
 
 
-            <p></p>
+                <p></p>
 
-            {/* <button onClick={del}>delete</button> */}
-        </div>
+                {/* <button onClick={del}>delete</button> */}
+            </div >
+        </>
     )
 }
 

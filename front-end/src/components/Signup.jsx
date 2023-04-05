@@ -41,21 +41,23 @@ function Signup() {
 
     return (
         <>
-            <Box id="container">
+            <div className='outer'>
+                <Box id="container" className="card shadow">
 
-                <h1>SignUp</h1>
-                <TextField className="inp" id="standard-basic" label="name" variant="standard" inputRef={nameref} /><br /><br />
-                <TextField id="standard-basic" label="email" variant="standard" inputRef={emailref} /><br /> <br />
-                <TextField id="standard-basic" label="password" variant="standard" inputRef={passwordref} /> <br /> <br />
-                <TextField id="standard-basic" label="confirm password" variant="standard" inputRef={password2ref} /> <br /> <br />
-                <TextField id="standard-basic" label=" phonenumber" variant="standard" inputRef={phoneref} /> <br /> <br />
+                    <h1 className='sup'>SignUp</h1>
+                    <TextField className="inp" id="standard-basic" label="name" variant="standard" inputRef={nameref} /><br /><br />
+                    <TextField id="standard-basic" label="email" variant="standard" inputRef={emailref} /><br /> <br />
+                    <TextField id="standard-basic" label="password" variant="standard" inputRef={passwordref} /> <br /> <br />
+                    <TextField id="standard-basic" label="confirm password" variant="standard" inputRef={password2ref} /> <br /> <br />
+                    <TextField id="standard-basic" label=" phonenumber" variant="standard" inputRef={phoneref} /> <br /> <br />
 
-                {/* <Button variant="contained" className='btn' onClick={handlesignup}>Submit</Button> */}
-                <Button variant="outlined" className='btn' onClick={handlesignup} >submit</Button>
+                    {/* <Button variant="contained" className='btn' onClick={handlesignup}>Submit</Button> */}
+                    <Button variant="outlined" className='btn' onClick={handlesignup} >submit</Button>
 
 
 
-            </Box>
+                </Box>
+            </div>
         </>
     )
 }

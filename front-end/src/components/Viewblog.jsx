@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Card from './card';
+import Card from './Card';
+import './viewblog.css'
 
 function Viewblog() {
     const [allblog, setallblog] = useState()
@@ -20,12 +21,16 @@ function Viewblog() {
     return (
 
         <>
-            <p>hai</p>
-            {allblog && allblog.map((blog) => {
-                return (
-                    <Card blogmap={blog} />
-                )
-            })}
+            <div className='main'>
+                <h1 className='exp'>Explore New Blogs</h1>
+                <div className='authorcontainer' >
+                    {allblog && allblog.map((blog) => {
+                        return (
+                            <Card blogmap={blog} />
+                        )
+                    })}
+                </div>
+            </div>
 
         </>
     )

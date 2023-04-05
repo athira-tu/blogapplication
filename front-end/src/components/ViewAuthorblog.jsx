@@ -1,10 +1,11 @@
 import React from 'react'
 import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import Card from './card';
+// import Card from './card';
 import { UserContext } from './context/UserContext';
 import { authorblog } from './api';
-import Authorcard from './authorcard';
+import Authorcard from './Authorcard';
+import './viewauthorblog.css'
 
 function ViewAuthorblog() {
     const [allblog, setallblog] = useState()
@@ -16,21 +17,21 @@ function ViewAuthorblog() {
         console.log(res);
         // setalltask(t)
     }
-
-
-    useEffect(() => { fetchallblog() }, [])
-
-
+    useEffect(() => { fetchallblog() }, [loggedinuser])
     return (
 
         <>
-            <p>hai</p>
-            {allblog && allblog.map((blog) => {
-                return (
-                    <Authorcard blogmap={blog} />
-                )
-            })}
-
+            <div className='main'>
+                <div className='authorcontainer' >
+                    {allblog && allblog.map((blog) => {
+                        return (
+                            <div>
+                                <Authorcard blogmap={blog} />
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
         </>
     )
 }

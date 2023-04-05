@@ -3,36 +3,39 @@
     padding-top: 20px;
 }
 
-.allcard {
-    width: 300px;
-    height: 325px;
+.authorcard {
+    width: 650px;
+    height: 285px;
     background: white;
     border-radius: 0.4em;
     box-shadow: 0.3em 0.3em 0.7em #00000015;
     transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: rgb(250, 250, 250) 0.2em solid;
     margin: 20px 20px 20px 20px;
+    margin-top: 50px;
+    margin-left: 150px;
 }
 
-.allcard:hover {
+.authorcard:hover {
     border: #009087 0.2em solid;
 }
 
 .buttons {
     background-color: #009087;
-    width: 270px;
+    width: 590px;
     height: 40px;
     margin-top: 180px;
     padding-top: 20px;
     display: flex;
     flex-direction: row;
+    /* flex-direction: column; */
     justify-content: space-around;
     margin-left: 17px;
 }
 
 .cardhead {
     background-color: #009087;
-    width: 240px;
+    width: 590px;
     height: 70px;
     margin-top: -40px;
     margin-left: 30px;

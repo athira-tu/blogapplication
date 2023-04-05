@@ -1,0 +1,15 @@
+.authorcontainer {
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+
+}
+
+/* 
+.exp {
+    color: #ff9100f8;
+} */
