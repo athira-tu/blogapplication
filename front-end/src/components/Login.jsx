@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './context/UserContext';
 import './login.css'
+import Navbar from './Navbar';
 // import { response } from 'express';
 
 
@@ -33,17 +34,24 @@ function Login() {
 
     }
     return (
-        <div className='loginouter'>
+        <>
+            <Navbar />
+            <div className='loginouter'>
 
-            <div className="card shadow" >
-                <h1 className='loginhead'>Login</h1>
-                <div className='content'>
-                    <TextField id="outlined-basic" label="email" variant="outlined" type="email" inputRef={emailref} /><br />
-                    <TextField id="outlined-basic" label=" password" variant="outlined" type="password" inputRef={passwordref} /><br />
-                    <Button variant="contained" onClick={handlelogin}>Submit</Button>
+                <div className="card shadow" >
+                    <h1 className='loginhead'>Login</h1>
+                    <div className='content'>
+                        <TextField id="outlined-basic" label="email" variant="outlined" type="email" inputRef={emailref} /><br />
+                        <TextField id="outlined-basic" label=" password" variant="outlined" type="password" inputRef={passwordref} /><br />
+                        <Button variant="contained" onClick={handlelogin}>Submit</Button>
+                        <p>if you don't have account? <a href="/signup">signup</a></p>
+                    </div>
                 </div>
+                {/* <div className='imgs'>
+                    <img src="..\images\signup-removebg.png" alt="" />
+                </div> */}
             </div>
-        </div>
+        </>
     )
 }
 

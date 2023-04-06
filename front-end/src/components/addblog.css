@@ -1,0 +1,30 @@
+.addmain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* width: 300px;
+    height: 250px; */
+    margin-left: 70px;
+    padding-left: 400px;
+}
+
+.addhead {
+    color: grey;
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
+}
+
+.img1 img {
+    width: 400px;
+    height: 400px;
+    background: none;
+
+}
+
+.img1 {
+    margin-left: 90px;
+    margin-top: 80px;
+}

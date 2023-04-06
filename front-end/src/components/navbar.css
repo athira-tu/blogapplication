@@ -1,0 +1,22 @@
+.mainnav {
+    background-color: #c5c6d0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    justify-content: space-around;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.options a {
+    margin-right: 30px;
+}

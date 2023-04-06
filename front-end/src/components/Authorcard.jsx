@@ -21,11 +21,11 @@ function Authorcard({ blogmap }) {
     return (
         <>
             <div className='authorcard'>
-                <div className='cardhead'>
+                <div className='acardhead'>
                     <h2 className='auth'>{blogmap.title}</h2>
                 </div>
                 <h3>{blogmap.description}</h3>
-                <div className='buttons'>
+                <div className='abuttons'>
                     {/* <button onClick={del}>delete1</button> */}
                     <DeleteSharpIcon onClick={del} />
                     <EditIcon onClick={blogedit} />

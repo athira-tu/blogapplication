@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from './context/UserContext';
 import ViewAuthorblog from './ViewAuthorblog';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
+import './addblog.css'
+import Navbar from './Navbar';
 
 function Addblog() {
 
@@ -45,20 +47,19 @@ function Addblog() {
 
     }
     return (
-        <div>
-            <h1>Add your blog</h1>
-            <p>{loggedinuser.name}</p>
-            <TextField id="outlined-basic" label="taskname" variant="outlined" inputRef={titleref} /><br />
-            <TextField id="outlined-basic" label="description" variant="outlined" multiline rows={5} inputRef={descriptionref} /><br />
-            <Button variant="contained" className='btn' onClick={handleaddblog}>Submit</Button>
-            {/* <Link to={<ViewAuthorblog />}>     <button>authorblog</button></Link> */}
-            {/* <TextareaAutosize
-                maxRows={4}
-                aria-label="maximum height"
-                placeholder="Maximum 4 rows"
+        <div className='outer'>
+            <Navbar />
+            <div className='addmain'>
+                <h1 className='addhead'>Add your blog</h1>
+                {/* <p>{loggedinuser.name}</p> */}
+                <TextField id="outlined-basic" label="enter your blog" variant="outlined" inputRef={titleref} /><br />
+                <TextField id="outlined-basic" label="description" variant="outlined" multiline rows={5} inputRef={descriptionref} /><br />
+                <Button variant="contained" className='btn' onClick={handleaddblog}>Submit</Button>
+            </div>
 
-                style={{ width: 200 }}
-            /> */}
+            <div className='img1'>
+                <img src="../images/addblogimage.png" alt="" />
+            </div>
 
 
 

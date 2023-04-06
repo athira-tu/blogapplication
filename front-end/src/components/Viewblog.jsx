@@ -22,7 +22,7 @@ function Viewblog() {
 
         <>
             <div className='main'>
-                <h1 className='exp'>Explore New Blogs</h1>
+                {/* <h1 className='exp'>Explore New Blogs</h1> */}
                 <div className='authorcontainer' >
                     {allblog && allblog.map((blog) => {
                         return (

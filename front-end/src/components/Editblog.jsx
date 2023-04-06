@@ -7,7 +7,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { UserContext } from './context/UserContext';
 import ViewAuthorblog from './ViewAuthorblog';
 import { editblog } from './api';
-import Authorcard from './authorcard';
+import Authorcard from './Authorcard';
+import './edit.css'
+import Navbar from './Navbar';
 
 function Editblog() {
 
@@ -27,14 +29,22 @@ function Editblog() {
         const response = await axios.patch(editblog + location.state._id, newData)
     }
     return (
-        <div>
-            <h1>Edit your blog</h1>
+        <>
+            <Navbar />
+            <div className='editouter'>
+                <div className='editimg'>
+                    <img src="../images/editimage.png" alt="" />
+                </div>
+                <div className='editmain'>
+                    <h1>Edit your blog</h1>
 
-            <TextField id="standard-basic" label="taskname" variant="standard" value={newtitle} onChange={(e) => { setnewtitle(e.target.value) }} /><br />
-            <TextField id="standard-basic" label="description" variant="standard" row={5} value={newcontent} onChange={(e) => { setnewcontent(e.target.value) }} /><br />
-            <Button variant="contained" className='btn' onClick={editData}>Submit</Button>
-            {/* <Link to={<ViewAuthorblog />}>     <button>authorblog</button></Link> */}
-        </div>
+                    <TextField id="standard-basic" label="taskname" variant="standard" value={newtitle} onChange={(e) => { setnewtitle(e.target.value) }} /><br />
+                    <TextField id="standard-basic" label="description" variant="standard" row={5} value={newcontent} onChange={(e) => { setnewcontent(e.target.value) }} /><br />
+                    <Button variant="contained" className='btn' onClick={editData}>Submit</Button>
+                    {/* <Link to={<ViewAuthorblog />}>     <button>authorblog</button></Link> */}
+                </div>
+            </div>
+        </>
     )
 }
 

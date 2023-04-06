@@ -1,0 +1,16 @@
+.editmain {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.editouter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.editimg {
+    margin-left: 200px;
+}

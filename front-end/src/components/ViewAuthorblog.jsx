@@ -6,10 +6,17 @@ import { UserContext } from './context/UserContext';
 import { authorblog } from './api';
 import Authorcard from './Authorcard';
 import './viewauthorblog.css'
+import Navbar from './Navbar';
+// import { useNavigation } from 'react-router-dom';
 
+
+// const navigate = useNavigation()
 function ViewAuthorblog() {
     const [allblog, setallblog] = useState()
     const { loggedinuser } = useContext(UserContext)
+    // function add() {
+    //     navigate('/addblog')
+    // }
 
     async function fetchallblog() {
         let res = await axios.get(authorblog + loggedinuser._id)
@@ -21,12 +28,20 @@ function ViewAuthorblog() {
     return (
 
         <>
+            <Navbar />
             <div className='main'>
+
                 <div className='authorcontainer' >
+
                     {allblog && allblog.map((blog) => {
                         return (
                             <div>
-                                <Authorcard blogmap={blog} />
+                                {/* <button onClick={add}>Add-blog</button> */}
+                                <div>
+                                    <Authorcard blogmap={blog} />
+                                </div>
+
+
                             </div>
                         )
                     })}

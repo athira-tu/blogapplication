@@ -18,7 +18,7 @@ function Card({ blogmap }) {
         <>
             <div className='allcard'>
                 <div className='cardhead'>
-                    <h2 className='auth'>{blogmap.title}</h2>
+                    <h2 className='all'>{blogmap.title}</h2>
                 </div>
                 <h3>{blogmap.description}</h3>
                 <h6>{blogmap.authorname}</h6>

@@ -41,22 +41,29 @@ function Signup() {
 
     return (
         <>
-            <div className='outer'>
-                <Box id="container" className="card shadow">
+            <div >
+                <div className='signupimg'>
+                    <Box id="container" className="card shadow">
+                        <div className='sign'>
 
-                    <h1 className='sup'>SignUp</h1>
-                    <TextField className="inp" id="standard-basic" label="name" variant="standard" inputRef={nameref} /><br /><br />
-                    <TextField id="standard-basic" label="email" variant="standard" inputRef={emailref} /><br /> <br />
-                    <TextField id="standard-basic" label="password" variant="standard" inputRef={passwordref} /> <br /> <br />
-                    <TextField id="standard-basic" label="confirm password" variant="standard" inputRef={password2ref} /> <br /> <br />
-                    <TextField id="standard-basic" label=" phonenumber" variant="standard" inputRef={phoneref} /> <br /> <br />
+                            <h1 className='sup'>SignUp</h1>
+                            <TextField className="inp" id="standard-basic" label="name" variant="standard" inputRef={nameref} /><br /><br />
+                            <TextField id="standard-basic" label="email" variant="standard" inputRef={emailref} /><br /> <br />
+                            <TextField id="standard-basic" label="password" variant="standard" inputRef={passwordref} /> <br /> <br />
+                            <TextField id="standard-basic" label="confirm password" variant="standard" inputRef={password2ref} /> <br /> <br />
+                            <TextField id="standard-basic" label=" phonenumber" variant="standard" inputRef={phoneref} /> <br /> <br />
 
-                    {/* <Button variant="contained" className='btn' onClick={handlesignup}>Submit</Button> */}
-                    <Button variant="outlined" className='btn' onClick={handlesignup} >submit</Button>
+                            {/* <Button variant="contained" className='btn' onClick={handlesignup}>Submit</Button> */}
+                            <Button variant="outlined" className='btn' onClick={handlesignup} >submit</Button>
 
 
 
-                </Box>
+                        </div>
+                    </Box>
+                    <div className='imgs'>
+                        <img src="..\images\signup-removebg.png" alt="" />
+                    </div>
+                </div>
             </div>
         </>
     )
