@@ -14,6 +14,9 @@
     border: rgb(250, 250, 250) 0.2em solid;
     margin: 20px 20px 20px 20px;
     margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin-left: 220px;
 }
 
@@ -21,15 +24,12 @@
     border: #c5c6d0 0.2em solid;
 }
 
-.abuttons {
-    background-color: #c5c6d0;
-    width: 590px;
-    height: 40px;
-    margin-top: 180px;
-    padding-top: 20px;
+.auttons {
+
+
     display: flex;
     flex-direction: row;
-    /* flex-direction: column; */
+
     justify-content: space-around;
     margin-left: 19px;
 }

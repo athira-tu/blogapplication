@@ -52,7 +52,7 @@ const login = async (req, res) => {
     } catch (error) {
         res.json({
             success: false,
-            message: "unsuccesfull"
+            message: " khsdlmunsuccesfull"
         })
     }
 }
@@ -134,11 +134,28 @@ const editBlog = async (req, res) => {
     catch (error) {
         res.json({
             success: false,
-            message: "unsuccesfull"
+            message: "unsuccesfull edit"
         })
     }
-
+}
+const setblog = async (req, res) => {
+    let set = await blogmodel.find({ category: req.params.category })
+    try {
+        res.json({
+            success: true,
+            message: "succesfull",
+            set
+        })
+        console.log(set)
+    }
+    catch (error) {
+        res.json({
+            success: false,
+            message: "unsuccesfull sort"
+        })
+        console.log(error);
+    }
 }
 
 
-module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog }
+module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog, setblog }

@@ -18,6 +18,7 @@ function Authorcard({ blogmap }) {
     async function blogedit() {
         navigate('/editblog', { state: blogmap })
     }
+    console.log(blogmap);
     return (
         <>
             <div className='authorcard'>
@@ -25,7 +26,12 @@ function Authorcard({ blogmap }) {
                     <h2 className='auth'>{blogmap.title}</h2>
                 </div>
                 <h3>{blogmap.description}</h3>
-                <div className='abuttons'>
+                <h3>{blogmap.category}</h3>
+
+                <hr />
+                <div className='auttons'>
+
+
                     {/* <button onClick={del}>delete1</button> */}
                     <DeleteSharpIcon onClick={del} />
                     <EditIcon onClick={blogedit} />

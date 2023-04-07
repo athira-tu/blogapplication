@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import "./navbar.css"
 import { useContext } from 'react'
 import { UserContext } from './context/UserContext'
 import Signout from './Signout'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useState } from 'react'
+import axios from 'axios'
+import { sortblog } from './api'
+import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
     const { loggedinuser } = useContext(UserContext)
+
+    const navigate = useNavigate()
+
+    async function sorting(e) {
+        navigate('/sortblog', { state: e.target.value })
+    }
+
+
     return (
         <div className="mainnav">
             <div className="head">
@@ -18,6 +35,25 @@ function Navbar() {
                 <a href="#">Contact</a>
                 <a href="/addblog">Add-blog</a>
                 <a href="/signup">signup</a>
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="demo-simple-select-helper-label" >category</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-helper-label"
+                        id="demo-simple-select-helper"
+                        label="category"
+                        onChange={sorting}
+
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value="HTML-CSS" >HTML-CSS</MenuItem>
+                        <MenuItem value="react">REACT</MenuItem>
+                        <MenuItem value="mongodb"   >MONGODB</MenuItem>
+                    </Select>
+                </FormControl>
+
+
                 {
                     loggedinuser ? <Signout /> : <a href="/login"><button >SignIn</button></a>
                 }

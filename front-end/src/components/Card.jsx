@@ -21,6 +21,7 @@ function Card({ blogmap }) {
                     <h2 className='all'>{blogmap.title}</h2>
                 </div>
                 <h3>{blogmap.description}</h3>
+                <h3>{blogmap.category}</h3>
                 <h6>{blogmap.authorname}</h6>
 
 
