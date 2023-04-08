@@ -17,9 +17,12 @@ function Navbar() {
     const { loggedinuser } = useContext(UserContext)
 
     const navigate = useNavigate()
+    const [select, setSelect] = useState("")
+
 
     async function sorting(e) {
-        navigate('/sortblog', { state: e.target.value })
+        setSelect(e.target.value)
+        navigate('/sortblog/' + e.target.value)
     }
 
 
@@ -42,14 +45,15 @@ function Navbar() {
                         id="demo-simple-select-helper"
                         label="category"
                         onChange={sorting}
+                        value={select}
 
                     >
                         <MenuItem value="">
                             <em>None</em>
                         </MenuItem>
                         <MenuItem value="HTML-CSS" >HTML-CSS</MenuItem>
-                        <MenuItem value="react">REACT</MenuItem>
-                        <MenuItem value="mongodb"   >MONGODB</MenuItem>
+                        <MenuItem value="REACT">REACT</MenuItem>
+                        <MenuItem value="MONGODB"   >MONGODB</MenuItem>
                     </Select>
                 </FormControl>
 

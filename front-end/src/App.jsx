@@ -1,7 +1,4 @@
 
-import { useEffect, useState, useContext } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Signup from './components/signup'
 import Login from './components/login'
@@ -13,9 +10,9 @@ import UserRoute from './components/privateRoute/UserRoute'
 // import Viewblog from './components/viewblog'
 import ViewAuthorblog from './components/ViewAuthorblog'
 import Editblog from './components/Editblog'
-import { UserContext } from './components/context/UserContext'
 import LandingPage from './components/LandingPage'
-import Sortblog from './components/sortblog'
+import Sortblog from './components/Sortblog'
+import SingleCard from './components/SingleCard'
 
 
 
@@ -37,7 +34,8 @@ function App() {
           {/* <Route path='/viewblog' element={<Viewblog />} /> */}
           <Route path='/viewauthorblog' element={<UserRoute><ViewAuthorblog /> </UserRoute>} />
           <Route path='/editblog' element={<Editblog />} />
-          <Route path='/sortblog' element={<Sortblog />} />
+          <Route path='/sortblog/:category' element={<Sortblog />} />
+          <Route path='/singleblog/:id' element={<SingleCard />} />
 
 
 

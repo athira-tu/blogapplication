@@ -24,7 +24,6 @@ function Addblog() {
     const descriptionref = useRef()
 
 
-    // export default function SelectLabels() {
     const [category, setcategory] = useState('');
 
     const handleChange = (event) => {
@@ -83,7 +82,7 @@ function Addblog() {
                             <MenuItem value="">
                                 <em>None</em>
                             </MenuItem>
-                            <MenuItem value="HTML/CSS" >HTML/CSS</MenuItem>
+                            <MenuItem value="HTML-CSS" >HTML-CSS</MenuItem>
                             <MenuItem value="REACT">REACT</MenuItem>
                             <MenuItem value="MONGODB">MONGODB</MenuItem>
                         </Select>

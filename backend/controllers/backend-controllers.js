@@ -1,5 +1,6 @@
 const usermodel = require("../models/backend-models")
 const blogmodel = require("../models/blogmodel")
+const authormodel = require("../models/authormodel")
 const bcrypt = require('bcrypt');
 const signup = async (req, res) => {
     try {
@@ -156,6 +157,62 @@ const setblog = async (req, res) => {
         console.log(error);
     }
 }
+const getoneblog = async (req, res) => {
+
+    try {
+        let blog = await blogmodel.findOne({ _id: req.params.id })
+        res.json({
+            success: true,
+            message: "succesfull",
+            blog
+        })
+        console.log(blog);
+    } catch (error) {
+        res.json({
+            success: false,
+            message: "unsuccesfull",
+
+        })
+        console.log(error);
+    }
+}
+const postcomment = async (req, res) => {
+    try {
+        let comment = await authormodel.create(req.body)
+        res.json({
+            success: true,
+            message: "comment posted succesfully"
 
 
-module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog, setblog }
+        })
+    } catch {
+        res.json({
+            succes: false,
+            message: "unsuccesful"
+        })
+    }
+
+}
+
+const blogcomment = async (req, res) => {
+    try {
+        let blogcomment = await authormodel.find({ blogid: req.params.id })
+        res.json({
+            success: true,
+            message: "succesfull",
+            blogcomment
+
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            message: "unsuccesfull"
+        })
+        console.log(error);
+    }
+}
+
+
+
+
+module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog, setblog, getoneblog, postcomment, blogcomment }

@@ -1,5 +1,5 @@
 const express = require("express")
-const { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog, setblog } = require("../controllers/backend-controllers")
+const { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog, setblog, getoneblog, postcomment, blogcomment } = require("../controllers/backend-controllers")
 const router = express.Router()
 
 
@@ -12,5 +12,8 @@ router.get("/getauthorblog/:id", getauthorblogs)
 router.delete("/delete-blog/:id", deleteblog)
 router.patch("/editblog/:id", editBlog)
 router.get("/sortblog/:category", setblog)
+router.get("/getoneblog/:id", getoneblog)
+router.post("/postcomment", postcomment)
+router.get("/blogcomment/:id", blogcomment)
 
 module.exports = router

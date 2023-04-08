@@ -38,3 +38,10 @@
     margin-top: -40px;
     margin-left: 30px;
 }
+
+.catmain {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
