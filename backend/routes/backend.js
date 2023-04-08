@@ -15,5 +15,6 @@ router.get("/sortblog/:category", setblog)
 router.get("/getoneblog/:id", getoneblog)
 router.post("/postcomment", postcomment)
 router.get("/blogcomment/:id", blogcomment)
+router.get('/authorblog/:id', getauthorblogs)
 
 module.exports = router

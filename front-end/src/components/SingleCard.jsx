@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react'
 import { postcomment, singleblog, theblogcomments } from './api'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 import { useContext } from 'react'
 import { UserContext } from './context/UserContext'
 import { useRef } from 'react'
 import Comments from './comments'
+import { authblogs } from './api'
 
-function SingleCard() {
+function SingleCard(blogmap) {
     const { id } = useParams()
+    const { authorid } = useParams
     const [oneblog, setoneblog] = useState({})
     const navigate = useNavigate()
     const location = useLocation()
@@ -70,10 +72,15 @@ function SingleCard() {
 
     }
     useEffect(() => { fetchallcomment() }, [refresh])
+    async function authblog() {
+        axios.get(authblogs + blogmap.authorid)
+        navigate('/authorblog')
+    }
 
     return (
         <>
             <h1>{oneblog.title}</h1>
+            <button onClick={authblog}>view</button>
             <textarea name="" id="" cols="30" rows="10" placeholder='comments' ref={commentref}></textarea>
             <button onClick={addcomment}>post</button>
 
@@ -87,5 +94,6 @@ function SingleCard() {
         </>
     )
 }
+
 
 export default SingleCard

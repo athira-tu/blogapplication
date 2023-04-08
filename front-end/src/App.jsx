@@ -13,6 +13,7 @@ import Editblog from './components/Editblog'
 import LandingPage from './components/LandingPage'
 import Sortblog from './components/Sortblog'
 import SingleCard from './components/SingleCard'
+import Authorblog from './components/Authorblog'
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/editblog' element={<Editblog />} />
           <Route path='/sortblog/:category' element={<Sortblog />} />
           <Route path='/singleblog/:id' element={<SingleCard />} />
+          <Route path='/authorblog' element={<Authorblog />} />
 
 
 

@@ -185,7 +185,7 @@ const postcomment = async (req, res) => {
 
 
         })
-    } catch {
+    } catch (error) {
         res.json({
             succes: false,
             message: "unsuccesful"
@@ -211,8 +211,23 @@ const blogcomment = async (req, res) => {
         console.log(error);
     }
 }
+const authorblogs = async (req, res) => {
+    try {
+        let blogs = await blogmodel.find({ authorid: req.params.id })
+        res.json({
+            success: true,
+            message: "succesfull",
+            blogs
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            message: "unsuccesfull"
+        })
+    }
+}
 
 
 
 
-module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog, setblog, getoneblog, postcomment, blogcomment }
+module.exports = { signup, login, addblog, getAllblog, getauthorblogs, deleteblog, editBlog, setblog, getoneblog, postcomment, blogcomment, authorblogs }
